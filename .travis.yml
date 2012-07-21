@@ -1,0 +1,29 @@
+language: perl
+perl:
+   - "5.16"
+   - "5.14"
+   - "5.12"
+   - "5.10"
+
+install:
+   # Deal with all of the DZIL dependancies, quickly and quietly
+   - cpanm --quiet --notest Dist::Zilla
+   - dzil authordeps | cpanm --quiet --notest
+
+   # Install the lowest possible required version for the dependencies
+   - export OLD_CPANM_OPT=$PERL_CPANM_OPT
+   - export PERL_CPANM_OPT='--mirror http://cpan.metacpan.org/ --mirror http://search.cpan.org/CPAN '$PERL_CPANM_OPT
+   - cpanm KEICHNER/Acme-Indent-0.01.tar.gz
+   - cpanm JSWARTZ/CHI-0.01.tar.gz
+   - cpanm KENTNL/HTTP-Tiny-Mech-0.1.0.tar.gz
+   - cpanm XSAWYERX/MetaCPAN-API-0.02.tar.gz
+   - cpanm STEVAN/Moose-0.01.tar.gz
+   - cpanm KWILLIAMS/Path-Class-0.01.tar.gz
+   - cpanm OALDERS/WWW-Mechanize-Cached-1.33.tar.gz
+   - cpanm BBYRD/sanity-0.91.tar.gz
+   - export PERL_CPANM_OPT=$OLD_CPANM_OPT
+script:
+   - dzil smoke --release --author
+notifications:
+   irc:
+      - "irc.perl.org#distzilla"
