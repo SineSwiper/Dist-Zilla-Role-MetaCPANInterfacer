@@ -102,7 +102,7 @@ The project homepage is L<https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPAN
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see L<https://metacpan.org/module/Dist::Zilla::Plugin::PrereqsClean/>.
+site near you, or see L<https://metacpan.org/module/Dist::Zilla::Role::MetaCPANInterfacer/>.
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
