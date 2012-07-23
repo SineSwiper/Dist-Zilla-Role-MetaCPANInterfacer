@@ -62,7 +62,7 @@ Writer: mcpan_mechua
 
 Type: Object
 
-Additional documentation: This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached>
+Additional documentation: This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached::GZip>
 object, using C<mcpan_cache> as the cache attribute.
 
 =head1 METHODS

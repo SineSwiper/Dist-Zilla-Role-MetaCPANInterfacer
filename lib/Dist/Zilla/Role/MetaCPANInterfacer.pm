@@ -48,11 +48,11 @@ has mcpan_mechua => (
    lazy    => 1,
    default => sub {
       $_[0]->_mcpan_set_agent_str(
-         WWW::Mechanize::Cached->new( cache => $_[0]->mcpan_cache )
+         WWW::Mechanize::Cached::GZip->new( cache => $_[0]->mcpan_cache )
       );
    },
    documentation => ai('
-      This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached>
+      This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached::GZip>
       object, using C<mcpan_cache> as the cache attribute.
    '),
 );
@@ -163,7 +163,7 @@ Writer: mcpan_mechua
 
 Type: Object
 
-Additional documentation: This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached>
+Additional documentation: This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached::GZip>
 object, using C<mcpan_cache> as the cache attribute.
 
 =head1 METHODS
