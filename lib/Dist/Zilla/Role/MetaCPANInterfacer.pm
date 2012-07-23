@@ -14,7 +14,6 @@ use MetaCPAN::API;
 use Path::Class;
 use File::HomeDir;
 use Scalar::Util qw{blessed};
-use Acme::Indent qw(ai);  # no idea why this is Acme::
 
 has mcpan => (
    is      => 'rw',
@@ -23,10 +22,6 @@ has mcpan => (
    default => sub {
       MetaCPAN::API->new( ua => $_[0]->mcpan_ua );
    },
-   documentation => ai('
-      This is your L<MetaCPAN::API> object.  By default, it will lazily create the object, using C<mcpan_ua>
-      as the Tiny user agent.
-   '),
 );
 
 has mcpan_ua => (
@@ -36,10 +31,6 @@ has mcpan_ua => (
    default => sub {
       HTTP::Tiny::Mech->new( mechua => $_[0]->mcpan_mechua );
    },
-   documentation => ai('
-      This is your L<HTTP::Tiny> compatible user agent.  By default, it will lazily create a L<HTTP::Tiny::Mech>
-      object, using C<mcpan_mechua> as the Mechanized user agent.
-   '),
 );
 
 has mcpan_mechua => (
@@ -51,10 +42,6 @@ has mcpan_mechua => (
          WWW::Mechanize::Cached::GZip->new( cache => $_[0]->mcpan_cache )
       );
    },
-   documentation => ai('
-      This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached::GZip>
-      object, using C<mcpan_cache> as the cache attribute.
-   '),
 );
 
 has mcpan_cache => (
@@ -69,10 +56,6 @@ has mcpan_cache => (
          root_dir   => Path::Class::dir( File::HomeDir->my_home )->subdir('.dzil', '.webcache')->stringify,
       )
    },
-   documentation => ai('
-      This is your caching object.  By default, it will lazily create a L<CHI> object, using a File driver pointing
-      to C<~/.dzil/.webcache>.
-   '),
 );
 
 sub _mcpan_set_agent_str {
@@ -110,21 +93,48 @@ __END__
  
 = DESCRIPTION
  
-This role is simply gives you a L<MetaCPAN::API> object to use with caching, so
+This role is simply gives you a [MetaCPAN::API] object to use with caching, so
 that other plugins can share that cache.  It uses the awesome example provided in
-the L<MetaCPAN::API/SYNOPSIS>, contributed by Kent Fredric.
+the [MetaCPAN::API/SYNOPSIS], contributed by Kent Fredric.
+
+= ATTRIBUTES
+
+All of these attributes are f'ing lazy, because they like to sit around the house.
+They are also read-write, as this is a role, and you might want to change around 
+the defaults.
+
+== mcpan
+
+* *Type:* A [MetaCPAN::API] object
+* *Default:* A new object, using {mcpan_ua} as the Tiny user agent
+
+== mcpan_ua
+
+* *Type:* A [HTTP::Tiny] compatible user agent
+* *Default:* A new [HTTP::Tiny::Mech] object, using {mcpan_mechua} as the Mechanized user agent
+
+== mcpan_mechua
+
+* *Type:* A [WWW::Mechanize] compatible user agent
+* *Default:* A new [WWW::Mechanize::Cached::GZip] object, using {mcpan_cache} as the cache attribute,
+and some UA string changes.
+
+== mcpan_cache
+
+* *Type:* A caching object
+* *Default:* A new [CHI] object, using the [CHI::Driver::File|File] driver pointing to {~/.dzil/.webcache}
 
 = TODO
 
 The caching stuff could potentially be split, but frankly, none of the existing 
-plugins really need caching all that much.  I've at least called the C<.webcache>
+plugins really need caching all that much.  I've at least called the {.webcache}
 directory a generic name, so feel free to re-use it.
 
-(Honestly, the only reason why this is a DZ module B<IS> the caching directory
+(Honestly, the only reason why this is a DZ module *IS* the caching directory
 name...)
 
 = SEE ALSO
 
-L<Dist::Zilla::PluginBundle::Prereqs>, which uses this quite a bit.
+[Dist::Zilla::PluginBundle::Prereqs], which uses this quite a bit.
 
 =end wikidoc

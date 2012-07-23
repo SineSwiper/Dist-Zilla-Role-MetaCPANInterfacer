@@ -15,86 +15,85 @@ Dist::Zilla::Role::MetaCPANInterfacer - something that will interact with MetaCP
 
 =head1 DESCRIPTION
 
-This role is simply gives you a LE<lt>MetaCPAN::APIE<gt> object to use with caching, so
+This role is simply gives you a L<MetaCPAN::API> object to use with caching, so
 that other plugins can share that cache.  It uses the awesome example provided in
-the LE<lt>MetaCPAN::APIE<sol>SYNOPSISE<gt>, contributed by Kent Fredric.
+the L<MetaCPAN::API/SYNOPSIS>, contributed by Kent Fredric.
 
 =head1 ATTRIBUTES
 
-=head2 mcpan
-
-Reader: mcpan
-
-Writer: mcpan
-
-Type: Object
-
-Additional documentation: This is your L<MetaCPAN::API> object.  By default, it will lazily create the object, using C<mcpan_ua>
-as the Tiny user agent.
-
-=head2 mcpan_ua
-
-Reader: mcpan_ua
-
-Writer: mcpan_ua
-
-Type: Object
-
-Additional documentation: This is your L<HTTP::Tiny> compatible user agent.  By default, it will lazily create a L<HTTP::Tiny::Mech>
-object, using C<mcpan_mechua> as the Mechanized user agent.
-
-=head2 mcpan_cache
-
-Reader: mcpan_cache
-
-Writer: mcpan_cache
-
-Type: Object
-
-Additional documentation: This is your caching object.  By default, it will lazily create a L<CHI> object, using a File driver pointing
-to C<~/.dzil/.webcache>.
-
-=head2 mcpan_mechua
-
-Reader: mcpan_mechua
-
-Writer: mcpan_mechua
-
-Type: Object
-
-Additional documentation: This is your L<WWW::Mechanize> compatible user agent.  By default, it will lazily create a L<WWW::Mechanize::Cached>
-object, using C<mcpan_cache> as the cache attribute.
-
-=head1 METHODS
+All of these attributes are f'ing lazy, because they like to sit around the house.
+They are also read-write, as this is a role, and you might want to change around 
+the defaults.
 
 =head2 mcpan
 
-Method originates in Dist::Zilla::Role::MetaCPANInterfacer.
+=over
+
+=item *
+
+B<Type:> A L<MetaCPAN::API> object
+
+=item *
+
+B<Default:> A new object, using C<<< mcpan_ua >>> as the Tiny user agent
+
+=back
 
 =head2 mcpan_ua
 
-Method originates in Dist::Zilla::Role::MetaCPANInterfacer.
+=over
 
-=head2 mcpan_cache
+=item *
 
-Method originates in Dist::Zilla::Role::MetaCPANInterfacer.
+B<Type:> A L<HTTP::Tiny> compatible user agent
+
+=item *
+
+B<Default:> A new L<HTTP::Tiny::Mech> object, using C<<< mcpan_mechua >>> as the Mechanized user agent
+
+=back
 
 =head2 mcpan_mechua
 
-Method originates in Dist::Zilla::Role::MetaCPANInterfacer.
+=over
+
+=item *
+
+B<Type:> A L<WWW::Mechanize> compatible user agent
+
+=item *
+
+B<Default:> A new L<WWW::Mechanize::Cached::GZip> object, using C<<< mcpan_cache >>> as the cache attribute,
+and some UA string changes.
+
+=back
+
+=head2 mcpan_cache
+
+=over
+
+=item *
+
+B<Type:> A caching object
+
+=item *
+
+B<Default:> A new L<CHI> object, using the L<CHI::Driver::File|File> driver pointing to C<<< ~/.dzil/.webcache >>>
+
+=back
 
 =head1 TODO
 
 The caching stuff could potentially be split, but frankly, none of the existing 
-plugins really need caching all that much.  I've at least called the CE<lt>.webcacheE<gt>
+plugins really need caching all that much.  I've at least called the C<<< .webcache >>>
 directory a generic name, so feel free to re-use it.
 
-(Honestly, the only reason why this is a DZ module BE<lt>ISE<gt> the caching directory
+(Honestly, the only reason why this is a DZ module B<IS> the caching directory
 name...)
 
 =head1 SEE ALSO
 
-LE<lt>Dist::Zilla::PluginBundle::PrereqsE<gt>, which uses this quite a bit.
+L<Dist::Zilla::PluginBundle::Prereqs>, which uses this quite a bit.
 
 =head1 AVAILABILITY
 
