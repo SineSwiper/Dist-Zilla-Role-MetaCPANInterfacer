@@ -24,7 +24,6 @@
    "prereqs" : {
       "runtime" : {
          "requires" : {
-            "Acme::Indent" : "0",
             "CHI" : "0",
             "File::HomeDir" : "0",
             "HTTP::Tiny::Mech" : "0",

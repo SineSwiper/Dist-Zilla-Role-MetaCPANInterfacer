@@ -18,7 +18,6 @@ my %WriteMakefileArgs = (
   "LICENSE" => "artistic_2",
   "NAME" => "Dist::Zilla::Role::MetaCPANInterfacer",
   "PREREQ_PM" => {
-    "Acme::Indent" => 0,
     "CHI" => 0,
     "File::HomeDir" => 0,
     "HTTP::Tiny::Mech" => 0,

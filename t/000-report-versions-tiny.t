@@ -49,7 +49,6 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
-eval { $v .= pmver('Acme::Indent','any version') };
 eval { $v .= pmver('CHI','any version') };
 eval { $v .= pmver('File::HomeDir','any version') };
 eval { $v .= pmver('HTTP::Tiny::Mech','any version') };
