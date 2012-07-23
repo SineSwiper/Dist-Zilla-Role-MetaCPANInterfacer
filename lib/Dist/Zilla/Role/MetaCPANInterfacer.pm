@@ -1,6 +1,6 @@
 package Dist::Zilla::Role::MetaCPANInterfacer;
 
-our $VERSION = '0.9'; # VERSION
+our $VERSION = '0.90'; # VERSION
 # ABSTRACT: something that will interact with MetaCPAN's API
 
 use sanity;

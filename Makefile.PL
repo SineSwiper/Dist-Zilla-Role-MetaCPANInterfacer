@@ -27,7 +27,7 @@ my %WriteMakefileArgs = (
     "WWW::Mechanize::Cached" => 0,
     "sanity" => 0
   },
-  "VERSION" => "0.9",
+  "VERSION" => "0.90",
   "test" => {
     "TESTS" => "t/*.t"
   }
