@@ -1,4 +1,4 @@
-package 'Dummy::Test';
+package Dummy::Test;
 
 use sanity;
 use Moose;
