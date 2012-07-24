@@ -5,7 +5,7 @@ package Dist::Zilla::Role::MetaCPANInterfacer;
 
 use sanity;
 
-use Moose;
+use Moose::Role;
 use CHI;
 use WWW::Mechanize::Cached;
 use HTTP::Tiny::Mech;
