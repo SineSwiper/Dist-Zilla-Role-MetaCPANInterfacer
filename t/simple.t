@@ -16,7 +16,10 @@ package main;
 
 use Test::Most tests => 1;
 
+my $t;
 lives_ok(sub {
-   my $t = Dummy::Test->new();
+   $t = Dummy::Test->new();
    $t->tester();
 }, 'MetaCPAN interface is up');
+
+diag $t->mcpan_mechua->agent;
