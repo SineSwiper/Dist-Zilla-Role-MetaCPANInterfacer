@@ -7,7 +7,7 @@ use sanity;
 
 use Moose::Role;
 use CHI;
-use WWW::Mechanize::Cached;
+use WWW::Mechanize::Cached::GZip;
 use HTTP::Tiny::Mech;
 use MetaCPAN::API;
 
