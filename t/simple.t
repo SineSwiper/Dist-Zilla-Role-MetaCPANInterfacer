@@ -12,7 +12,7 @@ sub tester {
 
 package main;
 
-$VERSION = "FOOOOOOOO";
+our $VERSION = "FOOOOOOOO";
 
 use Test::Most tests => 1;
 
