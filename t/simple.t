@@ -1,8 +1,8 @@
+package 'Dummy::Test';
+
 use sanity;
 use Moose;
 use Test::Most tests => 1;
-
-package 'Dummy::Test';
 
 with 'Dist::Zilla::Role::MetaCPANInterfacer';
 
