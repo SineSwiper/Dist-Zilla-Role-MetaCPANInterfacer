@@ -1,6 +1,15 @@
 Revision History for Dist-Zilla-Role-MetaCPANInterfacer
 =======================================================
 
+v0.91 2012-07-24
+----------------
+
+commit 5b088aa92a59f00923dbcae859db24fbfc51bbc5
+Author: Brendan Byrd <Perl@ResonatorSoft.org>
+Date:   Tue Jul 24 13:04:44 2012 -0400
+
+    Moose::Role, not Moose
+
 ===================================
 End of changes in the last 365 days
 ===================================

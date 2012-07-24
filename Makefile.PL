@@ -22,12 +22,12 @@ my %WriteMakefileArgs = (
     "File::HomeDir" => 0,
     "HTTP::Tiny::Mech" => 0,
     "MetaCPAN::API" => 0,
-    "Moose" => 0,
+    "Moose::Role" => 0,
     "Path::Class" => 0,
     "WWW::Mechanize::Cached" => 0,
     "sanity" => 0
   },
-  "VERSION" => "0.90",
+  "VERSION" => "0.91",
   "test" => {
     "TESTS" => "t/*.t"
   }
