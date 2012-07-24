@@ -4,7 +4,7 @@ Revision History for Dist-Zilla-Role-MetaCPANInterfacer
 v0.93 2012-07-24
 ----------------
 
-commit 9b368c665594b81758c8b3de904d91bf6e1cef39
+commit c332794a96b1b49bec530da5e0afe81da648a5f2
 Author: Brendan Byrd <Perl@ResonatorSoft.org>
 Date:   Tue Jul 24 15:43:10 2012 -0400
 
