@@ -11,6 +11,7 @@ dist.ini
 lib/Dist/Zilla/Role/MetaCPANInterfacer.pm
 t/00-compile.t
 t/000-report-versions-tiny.t
+t/simple.t
 weaver.ini
 xt/author/test-eol.t
 xt/release/check-manifest.t

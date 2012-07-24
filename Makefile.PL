@@ -11,7 +11,10 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "something that will interact with MetaCPAN's API",
   "AUTHOR" => "Brendan Byrd <BBYRD\@CPAN.org>",
-  "BUILD_REQUIRES" => {},
+  "BUILD_REQUIRES" => {
+    "Moose" => 0,
+    "Test::Most" => 0
+  },
   "CONFIGURE_REQUIRES" => {},
   "DISTNAME" => "Dist-Zilla-Role-MetaCPANInterfacer",
   "EXE_FILES" => [],

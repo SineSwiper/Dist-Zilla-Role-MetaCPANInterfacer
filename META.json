@@ -34,6 +34,12 @@
             "perl" : "v5.10.1",
             "sanity" : "0"
          }
+      },
+      "test" : {
+         "requires" : {
+            "Moose" : "0",
+            "Test::Most" : "0"
+         }
       }
    },
    "provides" : {
