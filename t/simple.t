@@ -1,5 +1,7 @@
 package Dummy::Test;
 
+our $VERSION = "FOOOOOOOO";
+
 use sanity;
 use Moose;
 
@@ -11,8 +13,6 @@ sub tester {
 }
 
 package main;
-
-our $VERSION = "FOOOOOOOO";
 
 use Test::Most tests => 1;
 

@@ -1,6 +1,6 @@
 package Dist::Zilla::Role::MetaCPANInterfacer;
 
-our $VERSION = '0.92'; # VERSION
+our $VERSION = '0.93'; # VERSION
 # ABSTRACT: something that will interact with MetaCPAN's API
 
 use sanity;
@@ -50,7 +50,7 @@ has mcpan_cache => (
    lazy    => 1,
    default => sub {
       CHI->new(
-         namespace  => __PACKAGE__,
+         namespace  => 'MetaCPAN',
          driver     => 'File',
          expires_in => '1d',
          root_dir   => Path::Class::dir( File::HomeDir->my_home )->subdir('.dzil', '.webcache')->stringify,
@@ -61,18 +61,12 @@ has mcpan_cache => (
 sub _mcpan_set_agent_str {
    my ($self, $ua) = @_;
    my $o = ucfirst($^O);
-   my $os;
    
-   if ($o eq 'MSWin32') {
-      my @osver = Win32::GetOSVersion();
-      $os = ($osver[0] || Win32::GetOSName()).' v'.join('.', @osver[1..3]);
-   }
-   else {
-      $os = `/bin/uname -srmo`;  ### LAZY: Backticks
-      $os =~ s/[\n\r]+|^\s+|\s+$//g;
-   }
+   use POSIX;
+   my ($sysname, $nodename, $release, $version, $machine) = POSIX::uname();
+   my $os = join('; ', "$sysname $release", $machine, $version);
    
-   my $v = eval '$'.blessed($self).'::VERSION';
+   my $v = $self->VERSION;
    $ua->agent("Mozilla/5.0 ($o; $os) ".blessed($self)."/$v ".$ua->_agent);
 
    return $ua;

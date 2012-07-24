@@ -35,7 +35,7 @@ prereqs:
 provides:
   Dist::Zilla::Role::MetaCPANInterfacer:
     file: lib/Dist/Zilla/Role/MetaCPANInterfacer.pm
-    version: 0.92
+    version: 0.93
 release_status: stable
 resources:
   bugtracker:
@@ -46,7 +46,7 @@ resources:
     url: git://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer.git
     web: https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer
   x_irc: irc://irc.perl.org/#distzilla
-version: 0.92
+version: 0.93
 x_Dist_Zilla:
   plugins:
     -
