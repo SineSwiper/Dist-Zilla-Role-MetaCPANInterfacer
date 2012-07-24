@@ -24,10 +24,10 @@ my %WriteMakefileArgs = (
     "MetaCPAN::API" => 0,
     "Moose::Role" => 0,
     "Path::Class" => 0,
-    "WWW::Mechanize::Cached" => 0,
+    "WWW::Mechanize::Cached::GZip" => 0,
     "sanity" => 0
   },
-  "VERSION" => "0.91",
+  "VERSION" => "0.92",
   "test" => {
     "TESTS" => "t/*.t"
   }

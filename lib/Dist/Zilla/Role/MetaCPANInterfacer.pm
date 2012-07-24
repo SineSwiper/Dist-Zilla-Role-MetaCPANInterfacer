@@ -1,13 +1,13 @@
 package Dist::Zilla::Role::MetaCPANInterfacer;
 
-our $VERSION = '0.91'; # VERSION
+our $VERSION = '0.92'; # VERSION
 # ABSTRACT: something that will interact with MetaCPAN's API
 
 use sanity;
 
 use Moose::Role;
 use CHI;
-use WWW::Mechanize::Cached;
+use WWW::Mechanize::Cached::GZip;
 use HTTP::Tiny::Mech;
 use MetaCPAN::API;
 

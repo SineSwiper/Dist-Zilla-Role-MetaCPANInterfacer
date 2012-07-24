@@ -55,7 +55,7 @@ eval { $v .= pmver('HTTP::Tiny::Mech','any version') };
 eval { $v .= pmver('MetaCPAN::API','any version') };
 eval { $v .= pmver('Moose::Role','any version') };
 eval { $v .= pmver('Path::Class','any version') };
-eval { $v .= pmver('WWW::Mechanize::Cached','any version') };
+eval { $v .= pmver('WWW::Mechanize::Cached::GZip','any version') };
 eval { $v .= pmver('sanity','any version') };
 
 
