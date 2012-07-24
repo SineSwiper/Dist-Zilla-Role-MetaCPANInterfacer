@@ -12,6 +12,8 @@ sub tester {
 
 package main;
 
+$VERSION = "FOOOOOOOO";
+
 use Test::Most tests => 1;
 
 lives_ok(sub {
