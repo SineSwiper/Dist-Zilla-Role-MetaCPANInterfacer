@@ -1,6 +1,16 @@
 Revision History for Dist-Zilla-Role-MetaCPANInterfacer
 =======================================================
 
+v0.93 2012-07-24
+----------------
+
+commit 9b368c665594b81758c8b3de904d91bf6e1cef39
+Author: Brendan Byrd <Perl@ResonatorSoft.org>
+Date:   Tue Jul 24 15:43:10 2012 -0400
+
+    Simplify cache namespace
+    Fix _mcpan_set_ua_str to use more machine-compliant POSIX::uname
+
 v0.92 2012-07-24
 ----------------
 
