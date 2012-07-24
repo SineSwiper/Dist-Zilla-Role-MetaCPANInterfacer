@@ -14,4 +14,7 @@ package main;
 
 use Test::Most tests => 1;
 
-lives_ok(sub { Dummy::Test->tester(); }, 'MetaCPAN interface is up');
+lives_ok(sub {
+   my $t = Dummy::Test->new();
+   $t->tester();
+}, 'MetaCPAN interface is up');
