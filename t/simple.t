@@ -1,6 +1,6 @@
 package Dummy::Test;
 
-our $VERSION = "FOOOOOOOO";
+our $VERSION = v1.2.3;
 
 use sanity;
 use Moose;
