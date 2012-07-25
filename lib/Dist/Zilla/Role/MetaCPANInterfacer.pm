@@ -1,6 +1,6 @@
 package Dist::Zilla::Role::MetaCPANInterfacer;
 
-our $VERSION = '0.93'; # VERSION
+our $VERSION = '0.94'; # VERSION
 # ABSTRACT: something that will interact with MetaCPAN's API
 
 use sanity;
@@ -66,7 +66,7 @@ sub _mcpan_set_agent_str {
    my ($sysname, $nodename, $release, $version, $machine) = POSIX::uname();
    my $os = join('; ', "$sysname $release", $machine, $version);
    
-   my $v = $self->VERSION;
+   my $v = $self->VERSION || '';
    $ua->agent("Mozilla/5.0 ($o; $os) ".blessed($self)."/$v ".$ua->_agent);
 
    return $ua;

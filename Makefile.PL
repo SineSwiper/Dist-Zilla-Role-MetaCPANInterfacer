@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     "WWW::Mechanize::Cached::GZip" => 0,
     "sanity" => 0
   },
-  "VERSION" => "0.93",
+  "VERSION" => "0.94",
   "test" => {
     "TESTS" => "t/*.t"
   }
