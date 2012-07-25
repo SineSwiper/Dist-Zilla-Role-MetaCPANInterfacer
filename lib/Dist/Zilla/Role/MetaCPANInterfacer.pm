@@ -15,6 +15,8 @@ use Path::Class;
 use File::HomeDir;
 use Scalar::Util qw{blessed};
 
+no warnings 'uninitialized';  # no, seriously, shut up about them...
+
 has mcpan => (
    is      => 'rw',
    isa     => 'Object',
