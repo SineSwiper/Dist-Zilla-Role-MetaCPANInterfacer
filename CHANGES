@@ -1,6 +1,16 @@
 Revision History for Dist-Zilla-Role-MetaCPANInterfacer
 =======================================================
 
+v0.94 2012-10-19
+----------------
+
+commit 3d6dc4c15d89bb4c178c435229b301e18247a843
+Author: Brendan Byrd <Perl@ResonatorSoft.org>
+Date:   Fri Oct 19 11:40:36 2012 -0400
+
+    Fix issue with potential garbage $HOME data during testing
+    Workaround for RT #78590
+
 v0.93 2012-07-24
 ----------------
 
