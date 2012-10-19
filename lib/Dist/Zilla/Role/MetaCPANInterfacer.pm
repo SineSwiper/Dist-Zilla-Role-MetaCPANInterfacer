@@ -1,6 +1,6 @@
 package Dist::Zilla::Role::MetaCPANInterfacer;
 
-our $VERSION = '0.94'; # VERSION
+our $VERSION = '0.95'; # VERSION
 # ABSTRACT: something that will interact with MetaCPAN's API
 
 use sanity;
@@ -12,7 +12,7 @@ use HTTP::Tiny::Mech;
 use MetaCPAN::API;
 
 use POSIX ();
-use File::Temp ();  # 'tmpnam' defined both here and POSIX
+use File::Temp qw(tempdir);  # 'tmpnam' defined both here and POSIX
 use Path::Class;
 use File::HomeDir;
 use Scalar::Util qw{blessed};
@@ -55,7 +55,7 @@ has mcpan_cache => (
    lazy    => 1,
    default => sub {
       # don't use $HOME if we are in the middle of testing
-      my $home_dir = $ENV{HARNESS_ACTIVE} ? File::Temp->newdir() : File::HomeDir->my_home;
+      my $home_dir = $ENV{HARNESS_ACTIVE} ? tempdir(CLEANUP => 1) : File::HomeDir->my_home;
       my $root_dir = dir($home_dir)->subdir('.dzil', '.webcache');
       CHI->new(
          namespace  => 'MetaCPAN',

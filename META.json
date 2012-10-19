@@ -57,7 +57,7 @@
    "provides" : {
       "Dist::Zilla::Role::MetaCPANInterfacer" : {
          "file" : "lib/Dist/Zilla/Role/MetaCPANInterfacer.pm",
-         "version" : "0.94"
+         "version" : "0.95"
       }
    },
    "release_status" : "stable",
@@ -73,7 +73,7 @@
       },
       "x_irc" : "irc://irc.perl.org/#distzilla"
    },
-   "version" : "0.94",
+   "version" : "0.95",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016000"
