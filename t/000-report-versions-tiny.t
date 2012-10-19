@@ -48,19 +48,23 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
-eval { $v .= pmver('CHI','any version') };
+eval { $v .= pmver('CHI','0.01') };
 eval { $v .= pmver('File::HomeDir','any version') };
-eval { $v .= pmver('HTTP::Tiny::Mech','any version') };
-eval { $v .= pmver('List::AllUtils','any version') };
-eval { $v .= pmver('MetaCPAN::API','any version') };
-eval { $v .= pmver('Moose','any version') };
-eval { $v .= pmver('Moose::Role','any version') };
-eval { $v .= pmver('Path::Class','any version') };
-eval { $v .= pmver('Test::Most','any version') };
+eval { $v .= pmver('HTTP::Tiny::Mech','v0.1.0') };
+eval { $v .= pmver('List::AllUtils','0.01') };
+eval { $v .= pmver('MetaCPAN::API','0.02') };
+eval { $v .= pmver('Moose','0.34') };
+eval { $v .= pmver('Moose::Role','0.07') };
+eval { $v .= pmver('Path::Class','0.17') };
+eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
+eval { $v .= pmver('Test::CheckDeps','0.002') };
+eval { $v .= pmver('Test::Most','0.01') };
 eval { $v .= pmver('Test::Pod','1.41') };
-eval { $v .= pmver('WWW::Mechanize::Cached::GZip','any version') };
-eval { $v .= pmver('namespace::clean','any version') };
-eval { $v .= pmver('sanity','any version') };
+eval { $v .= pmver('Test::Pod::Coverage','1.08') };
+eval { $v .= pmver('Test::UseAllModules','0.10') };
+eval { $v .= pmver('WWW::Mechanize::Cached::GZip','0.10') };
+eval { $v .= pmver('namespace::clean','0.06') };
+eval { $v .= pmver('sanity','0.91') };
 eval { $v .= pmver('version','0.9901') };
 
 
