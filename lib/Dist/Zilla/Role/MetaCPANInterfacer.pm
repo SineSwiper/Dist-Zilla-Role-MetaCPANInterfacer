@@ -16,7 +16,7 @@ use Path::Class;
 use File::Temp;
 use File::HomeDir;
 use Scalar::Util qw{blessed};
-use List::AllUtil qw{min};
+use List::AllUtils qw{min};
 
 use namespace::clean;
 
