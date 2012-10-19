@@ -4,7 +4,7 @@
       "Brendan Byrd <BBYRD@CPAN.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300027, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "artistic_2"
    ],
@@ -22,11 +22,18 @@
       ]
    },
    "prereqs" : {
+      "develop" : {
+         "requires" : {
+            "Test::Pod" : "1.41",
+            "version" : "0.9901"
+         }
+      },
       "runtime" : {
          "requires" : {
             "CHI" : "0",
             "File::HomeDir" : "0",
             "HTTP::Tiny::Mech" : "0",
+            "List::AllUtil" : "0",
             "MetaCPAN::API" : "0",
             "Moose::Role" : "0",
             "Path::Class" : "0",
@@ -63,6 +70,9 @@
    },
    "version" : "0.94",
    "x_Dist_Zilla" : {
+      "perl" : {
+         "version" : "5.016000"
+      },
       "plugins" : [
          {
             "class" : "Dist::Zilla::Plugin::ReportPhase",
@@ -72,17 +82,17 @@
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker",
             "name" : "MakeMaker",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
             "name" : "Git::NextVersion",
-            "version" : "1.121820"
+            "version" : "2.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::GatherDir",
             "name" : "Git::GatherDir",
-            "version" : "1.121820"
+            "version" : "2.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::OurPkgVersion",
@@ -97,7 +107,7 @@
          {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
             "name" : "PruneCruft",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitFmtChanges",
@@ -107,17 +117,17 @@
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
             "name" : "ManifestSkip",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "Manifest",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
             "name" : "License",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
@@ -137,7 +147,7 @@
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
             "name" : "ExecDir",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Compile",
@@ -147,7 +157,7 @@
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
             "name" : "PodSyntaxTests",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::RunExtraTests",
@@ -172,22 +182,22 @@
          {
             "class" : "Dist::Zilla::Plugin::ReportVersions::Tiny",
             "name" : "ReportVersions::Tiny",
-            "version" : "1.05"
+            "version" : "1.08"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::CheckManifest",
             "name" : "Test::CheckManifest",
-            "version" : "0.03"
+            "version" : "0.04"
          },
          {
             "class" : "Dist::Zilla::Plugin::AutoPrereqs",
             "name" : "AutoPrereqs",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::PrereqsClean",
             "name" : "PrereqsClean",
-            "version" : "1.00"
+            "version" : "0.91"
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckPrereqsIndexed",
@@ -197,22 +207,22 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "MetaConfig",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "MetaJSON",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
             "name" : "MetaYAML",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaNoIndex",
             "name" : "MetaNoIndex",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
@@ -232,52 +242,52 @@
          {
             "class" : "Dist::Zilla::Plugin::TravisYML",
             "name" : "TravisYML",
-            "version" : null
+            "version" : "0.95"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch",
             "name" : "Git::CheckFor::CorrectBranch",
-            "version" : "0.004"
+            "version" : "0.005"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CommitBuild",
             "name" : "Git::CommitBuild",
-            "version" : "1.121820"
+            "version" : "2.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
             "name" : "@Git/Check",
-            "version" : "1.121820"
+            "version" : "2.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
             "name" : "@Git/Commit",
-            "version" : "1.121820"
+            "version" : "2.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@Git/Tag",
-            "version" : "1.121820"
+            "version" : "2.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Push",
             "name" : "@Git/Push",
-            "version" : "1.121820"
+            "version" : "2.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
             "name" : "TestRelease",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
             "name" : "ConfirmRelease",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "UploadToCPAN",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::InstallRelease",
@@ -287,37 +297,37 @@
          {
             "class" : "Dist::Zilla::Plugin::Clean",
             "name" : "Clean",
-            "version" : "0.04"
+            "version" : "0.07"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":InstallModules",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":IncModules",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":TestFiles",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ExecFiles",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ShareFiles",
-            "version" : "4.300020"
+            "version" : "4.300027"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":MainModule",
-            "version" : "4.300020"
+            "version" : "4.300027"
          }
       ],
       "zilla" : {
@@ -325,7 +335,7 @@
          "config" : {
             "is_trial" : "0"
          },
-         "version" : "4.300020"
+         "version" : "4.300027"
       }
    }
 }

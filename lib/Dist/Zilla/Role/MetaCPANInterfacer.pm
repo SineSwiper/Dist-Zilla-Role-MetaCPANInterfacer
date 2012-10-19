@@ -11,11 +11,12 @@ use WWW::Mechanize::Cached::GZip;
 use HTTP::Tiny::Mech;
 use MetaCPAN::API;
 
+use POSIX;
 use Path::Class;
+use File::Temp;
 use File::HomeDir;
 use Scalar::Util qw{blessed};
-
-no warnings 'uninitialized';  # no, seriously, shut up about them...
+use List::AllUtil qw{min};
 
 has mcpan => (
    is      => 'rw',
@@ -51,11 +52,18 @@ has mcpan_cache => (
    isa     => 'Object',
    lazy    => 1,
    default => sub {
+      # don't use $HOME if we are in the middle of testing
+      my $home_dir = $ENV{HARNESS_ACTIVE} ? File::Temp->newdir() : File::HomeDir->my_home;
+      my $root_dir = dir($home_dir)->subdir('.dzil', '.webcache');
       CHI->new(
          namespace  => 'MetaCPAN',
          driver     => 'File',
          expires_in => '1d',
-         root_dir   => Path::Class::dir( File::HomeDir->my_home )->subdir('.dzil', '.webcache')->stringify,
+         root_dir   => $root_dir->stringify,
+
+         # https://rt.cpan.org/Ticket/Display.html?id=78590
+         on_set_error   => 'die',
+         max_key_length => min( POSIX::PATH_MAX - length( $root_dir->subdir('MetaCPAN', 0, 0)->absolute->stringify ) - 4 - 8, 248),
       )
    },
 );
@@ -64,8 +72,7 @@ sub _mcpan_set_agent_str {
    my ($self, $ua) = @_;
    my $o = ucfirst($^O);
    
-   use POSIX;
-   my ($sysname, $nodename, $release, $version, $machine) = POSIX::uname();
+   my ($sysname, $nodename, $release, $version, $machine) = POSIX::uname;
    my $os = join('; ', "$sysname $release", $machine, $version);
    
    my $v = $self->VERSION || '';
