@@ -5,6 +5,7 @@ our $VERSION = '0.94'; # VERSION
 
 use sanity;
 
+use File::Temp;
 use Moose::Role;
 use CHI;
 use WWW::Mechanize::Cached::GZip;
@@ -13,7 +14,6 @@ use MetaCPAN::API;
 
 use POSIX;
 use Path::Class;
-use File::Temp;
 use File::HomeDir;
 use Scalar::Util qw{blessed};
 use List::AllUtils qw{min};
