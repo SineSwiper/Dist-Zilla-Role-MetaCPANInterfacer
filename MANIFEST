@@ -24,5 +24,4 @@ xt/release/no-tabs.t
 xt/release/pod-coverage.t
 xt/release/pod-syntax.t
 xt/release/portability.t
-xt/release/synopsis.t
 xt/release/test-version.t
