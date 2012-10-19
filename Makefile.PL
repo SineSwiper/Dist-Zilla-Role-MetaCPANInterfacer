@@ -29,6 +29,7 @@ my %WriteMakefileArgs = (
     "Moose::Role" => 0,
     "Path::Class" => 0,
     "WWW::Mechanize::Cached::GZip" => 0,
+    "namespace::clean" => 0,
     "sanity" => 0
   },
   "VERSION" => "0.94",

@@ -38,6 +38,7 @@
             "Moose::Role" : "0",
             "Path::Class" : "0",
             "WWW::Mechanize::Cached::GZip" : "0",
+            "namespace::clean" : "0",
             "perl" : "v5.10.1",
             "sanity" : "0"
          }

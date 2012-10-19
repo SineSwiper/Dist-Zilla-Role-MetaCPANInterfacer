@@ -59,6 +59,7 @@ eval { $v .= pmver('Path::Class','any version') };
 eval { $v .= pmver('Test::Most','any version') };
 eval { $v .= pmver('Test::Pod','1.41') };
 eval { $v .= pmver('WWW::Mechanize::Cached::GZip','any version') };
+eval { $v .= pmver('namespace::clean','any version') };
 eval { $v .= pmver('sanity','any version') };
 eval { $v .= pmver('version','0.9901') };
 

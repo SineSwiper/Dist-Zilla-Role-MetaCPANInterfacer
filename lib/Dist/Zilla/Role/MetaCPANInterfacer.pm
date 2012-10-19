@@ -18,6 +18,8 @@ use File::HomeDir;
 use Scalar::Util qw{blessed};
 use List::AllUtil qw{min};
 
+use namespace::clean;
+
 has mcpan => (
    is      => 'rw',
    isa     => 'Object',
