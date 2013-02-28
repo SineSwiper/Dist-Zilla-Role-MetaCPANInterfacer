@@ -23,7 +23,7 @@ no_index:
 provides:
   Dist::Zilla::Role::MetaCPANInterfacer:
     file: lib/Dist/Zilla/Role/MetaCPANInterfacer.pm
-    version: 0.95
+    version: 0.96
 requires:
   CHI: 0.01
   File::HomeDir: 0
@@ -41,7 +41,7 @@ resources:
   bugtracker: https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer/issues
   homepage: https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer/wiki
   repository: git://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer.git
-version: 0.95
+version: 0.96
 x_Dist_Zilla:
   perl:
     version: 5.016000
@@ -177,11 +177,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MinimumPrereqs
       name: '@Filter/@Prereqs/MinimumPrereqs'
-      version: 0.91
+      version: 0.92
     -
       class: Dist::Zilla::Plugin::PrereqsClean
       name: '@Filter/@Prereqs/PrereqsClean'
-      version: 0.91
+      version: 0.92
     -
       class: Dist::Zilla::Plugin::CheckPrereqsIndexed
       name: '@Filter/CheckPrereqsIndexed'

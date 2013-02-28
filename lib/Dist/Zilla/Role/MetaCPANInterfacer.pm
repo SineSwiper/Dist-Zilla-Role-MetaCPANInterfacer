@@ -1,6 +1,6 @@
 package Dist::Zilla::Role::MetaCPANInterfacer;
 
-our $VERSION = '0.95'; # VERSION
+our $VERSION = '0.96'; # VERSION
 # ABSTRACT: something that will interact with MetaCPAN's API
 
 use sanity;
@@ -78,7 +78,7 @@ sub _mcpan_set_agent_str {
    my $os = join('; ', "$sysname $release", $machine, $version);
    
    my $v = $self->VERSION || '';
-   $ua->agent("Mozilla/5.0 ($o; $os) ".blessed($self)."/$v ".$ua->_agent);
+   $ua->agent("Mozilla/5.0 ($o; $os) ".blessed($self)."/$v ".__PACKAGE__."/$VERSION ".$ua->_agent);
 
    return $ua;
 }
@@ -223,7 +223,7 @@ Brendan Byrd <BBYRD@CPAN.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2012 by Brendan Byrd.
+This software is Copyright (c) 2013 by Brendan Byrd.
 
 This is free software, licensed under:
 

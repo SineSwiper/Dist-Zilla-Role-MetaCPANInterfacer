@@ -57,7 +57,7 @@
    "provides" : {
       "Dist::Zilla::Role::MetaCPANInterfacer" : {
          "file" : "lib/Dist/Zilla/Role/MetaCPANInterfacer.pm",
-         "version" : "0.95"
+         "version" : "0.96"
       }
    },
    "release_status" : "stable",
@@ -73,7 +73,7 @@
       },
       "x_irc" : "irc://irc.perl.org/#distzilla"
    },
-   "version" : "0.95",
+   "version" : "0.96",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016000"
@@ -242,12 +242,12 @@
          {
             "class" : "Dist::Zilla::Plugin::MinimumPrereqs",
             "name" : "@Filter/@Prereqs/MinimumPrereqs",
-            "version" : "0.91"
+            "version" : "0.92"
          },
          {
             "class" : "Dist::Zilla::Plugin::PrereqsClean",
             "name" : "@Filter/@Prereqs/PrereqsClean",
-            "version" : "0.91"
+            "version" : "0.92"
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckPrereqsIndexed",
