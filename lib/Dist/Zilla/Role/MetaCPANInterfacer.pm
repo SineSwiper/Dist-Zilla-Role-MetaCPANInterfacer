@@ -78,7 +78,7 @@ sub _mcpan_set_agent_str {
    my $os = join('; ', "$sysname $release", $machine, $version);
    
    my $v = $self->VERSION || '';
-   $ua->agent("Mozilla/5.0 ($o; $os) ".blessed($self)."/$v ".$ua->_agent);
+   $ua->agent("Mozilla/5.0 ($o; $os) ".blessed($self)."/$v ".__PACKAGE__."/$VERSION ".$ua->_agent);
 
    return $ua;
 }
