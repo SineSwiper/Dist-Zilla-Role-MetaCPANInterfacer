@@ -65,7 +65,7 @@ has mcpan_cache => (
 
          # https://rt.cpan.org/Ticket/Display.html?id=78590
          on_set_error   => 'die',
-         max_key_length => min( POSIX::PATH_MAX - length( $root_dir->subdir('MetaCPAN', 0, 0)->absolute->stringify ) - 4 - 8, 248),
+         max_key_length => min( ( eval { POSIX::PATH_MAX } || 260 ) - length( $root_dir->subdir('MetaCPAN', 0, 0)->absolute->stringify ) - 4 - 8, 248),
       )
    },
 );
