@@ -1,6 +1,6 @@
 package Dist::Zilla::Role::MetaCPANInterfacer;
 
-our $VERSION = '0.96'; # VERSION
+our $VERSION = '0.97'; # VERSION
 # ABSTRACT: something that will interact with MetaCPAN's API
 
 use sanity;
@@ -65,7 +65,7 @@ has mcpan_cache => (
 
          # https://rt.cpan.org/Ticket/Display.html?id=78590
          on_set_error   => 'die',
-         max_key_length => min( POSIX::PATH_MAX - length( $root_dir->subdir('MetaCPAN', 0, 0)->absolute->stringify ) - 4 - 8, 248),
+         max_key_length => min( ( eval { POSIX::PATH_MAX } || 260 ) - length( $root_dir->subdir('MetaCPAN', 0, 0)->absolute->stringify ) - 4 - 8, 248),
       )
    },
 );
@@ -85,11 +85,11 @@ sub _mcpan_set_agent_str {
 
 42;
 
-
+__END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -186,7 +186,7 @@ L<Dist::Zilla::PluginBundle::Prereqs>, which uses this quite a bit.
 
 =head1 AVAILABILITY
 
-The project homepage is L<https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer/wiki>.
+The project homepage is L<https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer>.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
@@ -209,28 +209,28 @@ those networks/channels and get help:
 
 irc.perl.org
 
-You can connect to the server at 'irc.perl.org' and join this channel: #distzilla then talk to this person for help: SineSwiper.
+You can connect to the server at 'irc.perl.org' and talk to this person for help: SineSwiper.
 
 =back
 
 =head2 Bugs / Feature Requests
 
-Please report any bugs or feature requests via L<L<https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer/issues>|GitHub>.
+Please report any bugs or feature requests via L<https://github.com/SineSwiper/Dist-Zilla-Role-MetaCPANInterfacer/issues>.
 
 =head1 AUTHOR
 
 Brendan Byrd <BBYRD@CPAN.org>
 
+=head1 CONTRIBUTOR
+
+Christian Walde <walde.christian@googlemail.com>
+
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2013 by Brendan Byrd.
+This software is Copyright (c) 2014 by Brendan Byrd.
 
 This is free software, licensed under:
 
   The Artistic License 2.0 (GPL Compatible)
 
 =cut
-
-
-__END__
-

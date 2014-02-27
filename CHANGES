@@ -1,80 +1,36 @@
 Revision History for Dist-Zilla-Role-MetaCPANInterfacer
 =======================================================
 
+v0.97 2014-02-27
+----------------
+
+[b4c2aab]
+* Author: Brendan Byrd <Perl@ResonatorSoft.org>
+* Date:   2014-02-27 18:01:31 -0500 (81 seconds ago)
+
+DZIL cleanup
+
+[b5b432c]
+* Author: Christian Walde <walde.christian@googlemail.com>
+* Date:   2014-02-20 20:11:25 +0100 (7 days ago)
+
+provide fallback for POSIX::PATH_MAX for platforms without it
+
 v0.96 2013-02-28
 ----------------
 
-commit 2b7dd7a3b222ff516150f70cb137f8f1521d6723
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Thu Feb 28 08:30:11 2013 -0500
+[d116975]
+* Author: Brendan Byrd <Perl@ResonatorSoft.org>
+* Date:   2013-02-28 08:33:10 -0500 (12 months ago)
 
-    Add __PACKAGE__ to UA (per oalders' recommendation)
+Release v0.96
 
-v0.95 2012-10-19
-----------------
+[2b7dd7a]
+* Author: Brendan Byrd <Perl@ResonatorSoft.org>
+* Date:   2013-02-28 08:30:11 -0500 (12 months ago)
 
-commit f6286e17aa423471a4fb1a64912a6b18bc915c8e
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Fri Oct 19 12:03:40 2012 -0400
+Add __PACKAGE__ to UA (per oalders' recommendation)
 
-    Change File::Temp to tempdir to fix cleanup process
-
-v0.94 2012-10-19
-----------------
-
-commit 8df9264a45ef158eb09decd8a0466b7150427e24
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Fri Oct 19 11:49:05 2012 -0400
-
-    Release v0.94
-
-commit 3d6dc4c15d89bb4c178c435229b301e18247a843
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Fri Oct 19 11:40:36 2012 -0400
-
-    Fix issue with potential garbage $HOME data during testing
-    Workaround for RT #78590
-
-v0.93 2012-07-24
-----------------
-
-commit bc40c647b868585753f136b31adbf7289fe884c7
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Tue Jul 24 15:53:56 2012 -0400
-
-    Release v0.93
-
-commit c332794a96b1b49bec530da5e0afe81da648a5f2
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Tue Jul 24 15:43:10 2012 -0400
-
-    Simplify cache namespace
-    Fix _mcpan_set_ua_str to use more machine-compliant POSIX::uname
-
-v0.92 2012-07-24
-----------------
-
-commit 7aa0c32e045249d5b0805213f4881d101a4b1844
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Tue Jul 24 14:04:26 2012 -0400
-
-    Release v0.92
-
-commit 855d01a54ae40317315133d26dc290425e2b6527
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Tue Jul 24 14:03:25 2012 -0400
-
-    Fix minor issues
-    Add a real test
-
-v0.91 2012-07-24
-----------------
-
-commit 5b088aa92a59f00923dbcae859db24fbfc51bbc5
-Author: Brendan Byrd <Perl@ResonatorSoft.org>
-Date:   Tue Jul 24 13:04:44 2012 -0400
-
-    Moose::Role, not Moose
 
 ===================================
 End of changes in the last 365 days
